@@ -4,9 +4,10 @@ import { BottomNavigation, Text,Appbar } from 'react-native-paper';
 import Home from './Home';
 import Profile from './Profile';
 import Notification from './Notification';
+import Login from './Login';
 
 const HomeRoute = () => {
-  return  <Home/>
+  return  <Login/>
 }
 
 const StoreRoute = () => <Text>Albums</Text>;
