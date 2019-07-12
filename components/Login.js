@@ -1,20 +1,24 @@
 import React, { Component } from 'react'
 import {
-    FlatList, View, TouchableOpacity, Text, Image, Alert,
+    View, TouchableOpacity, Text, Image,
     StyleSheet,
     ImageBackground,
     ScrollView,
-    Dimensions
+    Dimensions,
+    TextInput
 } from 'react-native'
-import { ActivityIndicator, TextInput } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
-import bgImage from './images/ic_bg.png'
-import Logo from './images/logo.png'
+import MyHeader from './MyHeader'
+
 
 
 const { width: WIDTH } = Dimensions.get('window')
 
-export default class Login extends Component {
+class Login extends Component {
+
+    static navigationOptions = {
+        drawerLabel: 'Login',
+      }
 
       state={
           showPass:true,
@@ -31,11 +35,12 @@ export default class Login extends Component {
 
     render() {
         return (
-
-            <ImageBackground source={bgImage} style={styles.backbroundContainer}>
+            <View>
+              <MyHeader name="Login"/>
+               <ImageBackground  source={require('../images/ic_bg.png')} style={styles.backbroundContainer}>
                 <ScrollView>
                     <View style={styles.logoContainer}>
-                        <Image source={Logo} style={styles.logo} resizeMode="contain" />
+                        <Image source={require('../images/logo.png')} style={styles.logo} resizeMode="contain" />
                         <Text style={styles.logoText}>Winds Captain App</Text>
                     </View>
 
@@ -48,7 +53,6 @@ export default class Login extends Component {
                     </View>
 
                     <View>
-
                         
                         <TextInput
                             style={styles.input}
@@ -65,16 +69,14 @@ export default class Login extends Component {
                         <Text style={styles.text}>Login</Text>
                     </TouchableOpacity>
 
-
-
-
                 </ScrollView>
-            </ImageBackground>
-
+              </ImageBackground>
+            </View>
         )
     }
 }
 
+export default Login
 
 const styles = StyleSheet.create({
 
@@ -104,6 +106,7 @@ const styles = StyleSheet.create({
         
     },
     input: {
+        backgroundColor:'red',
         marginTop: 20,
         width: WIDTH - 55,
         height: 45,

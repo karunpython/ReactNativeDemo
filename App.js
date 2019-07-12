@@ -1,13 +1,16 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { BottomNavigation, Text,Appbar } from 'react-native-paper';
+import { StyleSheet, View} from 'react-native';
+import { BottomNavigation, Text,} from 'react-native-paper';
 import Home from './Home';
 import Profile from './Profile';
 import Notification from './Notification';
-import Login from './Login';
+import Homes from './Homes';
+import MyHeader from './components/MyHeader'
+import MyBody from './components/Home'
+import Navi from './components/Navi'
 
 const HomeRoute = () => {
-  return  <Login/>
+  return  <Notification/>
 }
 
 const StoreRoute = () => <Text>Albums</Text>;
@@ -51,9 +54,11 @@ export default class App extends React.Component {
   });
 
   render() {
-    return (
-       <View style={styles.container}>
-       <Appbar.Header>
+    return (<Navi/>)
+        
+      
+
+       {/* <Appbar.Header>
                <Appbar.Content
                  title={this.state.routes[this.state.index].title}
                />
@@ -63,9 +68,8 @@ export default class App extends React.Component {
         navigationState={this.state}
         onIndexChange={this._handleIndexChange}
         renderScene={this._renderScene}
-      />
-      </View>
-    );
+      /> */}
+
   }
 }
 
