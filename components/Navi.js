@@ -7,6 +7,7 @@
  import Home from './Home'
  import Profile from './Profile'
  import MyHeader from './MyHeader'
+ import Tab from './tab/Tab'
 
 
 
@@ -26,10 +27,12 @@ class Navi extends React.Component{
  }
 
  const MyDrawer = createDrawerNavigator({
+  home:Tab,
   saerch:Search,
   login:Login,
   profile:Profile,
-  home:Home,
+  tab:Tab,
+ 
 
 })
 
